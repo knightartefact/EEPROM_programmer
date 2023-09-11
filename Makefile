@@ -8,6 +8,7 @@
 SRC	=	src/eeprom_programmer.c\
 		src/port_manager.c\
 		src/options.c\
+		src/file_conversion.c\
 
 OBJ	=	$(SRC:.c=.o)
 

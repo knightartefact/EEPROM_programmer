@@ -54,5 +54,9 @@ int check_options(options_t *options)
         printf("Please specify a file to read from / write to\n");
         return 1;
     }
+    if (options->input_filename)
+        options->command = WRITE_EEPROM;
+    if (options->output_filename)
+        options->command = READ_EEPROM;
     return 0;
 }

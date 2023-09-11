@@ -8,6 +8,8 @@
 #ifndef OPTIONS_H_
     #define OPTIONS_H_
     #include <getopt.h>
+    #define READ_EEPROM 1
+    #define WRITE_EEPROM 2
 
 static const struct option OPT_FLAGS[] = {
     {"output", required_argument, 0, 'o'},
@@ -22,6 +24,8 @@ typedef struct options_s {
     char *port;
     char *input_filename;
     char *output_filename;
+    int command;
+    int verify;
 } options_t;
 
 void get_options(int ac, char **av, options_t *options);

@@ -83,8 +83,7 @@ int set_interface_attribs(int fd, int speed)
         printf("Error from tcgetattr: %s\n", strerror(errno));
         return -1;
     }
-    cfsetospeed(&tty, (speed_t)speed);
-    cfsetispeed(&tty, (speed_t)speed);
+    cfsetspeed(&tty, (speed_t)speed);
     tty.c_cflag |= (CLOCAL | CREAD);	/* ignore modem controls */
     tty.c_cflag &= ~CSIZE;
     tty.c_cflag |= CS8;		 /* 8-bit characters */
